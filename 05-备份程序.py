@@ -1,0 +1,8 @@
+name = input("输入备份文件名")
+f = open(name,"r")
+content = f.read()
+position = name.rfind(".")
+f1 = open(newname,"w")
+f1.write(content)
+f.close()
+f1.close()
