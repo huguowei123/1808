@@ -1,10 +1,13 @@
-class Phone():
+class Animal():
+	pass
+class Cat(Animal):
 	def __init__(self,name):
 		self.name = name
-	def small(self):
-		print("small")
-	def color = color
+
+class Dog(Animal):
 	def __init__(self,name):
 		self.name = name
-apple = Phone("apple")
-oppo = Phone("oppo")
+bsm = Cat("波斯猫")
+print(bsm.name)
+wc = Dog("旺财")
+print(wc.name)

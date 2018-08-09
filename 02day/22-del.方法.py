@@ -9,3 +9,9 @@ class Dog():
 		print("我del")
 dog = Dog()
 print(dog)
+dog1 = dog
+print(id(dog))
+print(id(dog))
+del dog
+del dog1
+print("haha")
