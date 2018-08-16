@@ -1,12 +1,9 @@
 class A():
-
     def __init__(self):
 
         self.name = 10
 
         self.age = 20
-
-
 
     def show(self):
 
@@ -19,15 +16,9 @@ class B():
         print("哈哈哈")
 
 
-
-
-
 class C(A,B):
 
     pass
-
-
-
 
 
 c = C()

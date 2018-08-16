@@ -5,11 +5,9 @@ class Animal():
         self.name = name
 
 
-
     def eat(self):
 
         print("吃")
-
 
 
     def sleep(self):
@@ -17,11 +15,9 @@ class Animal():
         print("睡")
 
 
-
 class Cat(Animal):
 
     pass
-
 
 
 class Dog(Animal):
@@ -29,11 +25,9 @@ class Dog(Animal):
     pass
 
 
-
 class Pig(Animal):
 
     pass
-
 
 
 bsm = Cat("波斯猫")
@@ -61,3 +55,4 @@ pq = Pig("佩奇")
 pq.eat()
 
 pq.sleep()
+print(pq.name)

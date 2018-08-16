@@ -7,11 +7,9 @@ class Father():
         self.__sfq = 100
 
 
-
     def __play(self):
 
         print("玩游戏")
-
 
 
     def getsfq(self):#共有方法
@@ -19,23 +17,17 @@ class Father():
         return self.__sfq
 
 
-
     def Play(self):#共有方法
 
         self.__play() 
 
-    
 
 class Son(Father):
 
     pass
 
 
-
-
-
 son = Son("艾斯")
-
 
 
 print(son.name)
