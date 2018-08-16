@@ -64,9 +64,12 @@ class PlaneGame(object):
 
 	def __check_collide(self):
 		"""碰撞检测"""
-		pygame.sprite.groupcollide(self.hero.bullets,self.enemy_group,True,True)
-		enemies = 
-		pass
+		pygame.sprite.groupcollide(self.hero.bullet_group,self.enemy_group,True,True)
+		enemies = pygame.sprite.spritecollide(self.hero, self.enemy_group,True)
+		if len(enemies) > 0:
+			self.hero.kill()
+			PlaneGame.__game_over()
+		
 	def __update_sprites(self):
 		"""更新精灵组"""
 		self.backgroup.update()
@@ -84,7 +87,7 @@ class PlaneGame(object):
 	@staticmethod
 	def __game_over():
 		"""游戏结束"""
-		print("游戏结束")
+		print("Game over")
 		pygame.quit()
 		exit()
 if __name__ == "__main__":
