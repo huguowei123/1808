@@ -52,7 +52,7 @@ class HeroSprite(GameSprite):
 
 		if self.rect.left <= 0:
 			self.rect.left = 0
-
+ni
 		if self.rect.right >= SCREEN_RECT.width:
 			self.rect.right = SCREEN_RECT.width
 

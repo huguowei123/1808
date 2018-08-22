@@ -1,0 +1,5 @@
+<function Hotel.inHome at 0x7ffbae5a98c8>Tue Aug 21 19:41:35 2018
+<function Hotel.inHome at 0x7f27dbb288c8>Tue Aug 21 19:42:07 2018
+<function Hotel.inHome at 0x7f7539b978c8>Tue Aug 21 19:42:47 2018
+<function Hotel.inHome at 0x7f8c725e88c8>Tue Aug 21 19:43:27 2018
+<function Hotel.outHome at 0x7f8c725e89d8>Tue Aug 21 19:43:46 2018

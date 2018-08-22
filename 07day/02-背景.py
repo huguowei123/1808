@@ -1,3 +1,10 @@
+import pygame.sts
+pygame.init()
+pygame.mixer.init()
+pingmu = pygame.display.set_mode([400,500])
+muc = C：\User\胡国伟\Desktop
+pygame.mixer.music.load(muc)
+pygame.mixer.music.play()
 import pygame
 from jingling import *
 class PlaneGame(object):
@@ -47,13 +54,13 @@ class PlaneGame(object):
 		#获取用户按键
 		keys_pressed = pygame.key.get_pressed()
 		if keys_pressed[pygame.K_RIGHT]:
-			self.hero.speed = 2
+			self.hero.speed = 10
 		elif keys_pressed[pygame.K_LEFT]:
-			self.hero.speed = -2
+			self.hero.speed = -10
 		elif keys_pressed[pygame.K_UP]:
-			self.hero.speed1 = -2
+			self.hero.speed1 = -10
 		elif keys_pressed[pygame.K_DOWN]:
-			self.hero.speed1 = 2
+			self.hero.speed1 = 10
 		else:
 			self.hero.speed = 0
 			self.hero.speed1 = 0
