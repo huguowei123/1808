@@ -1,7 +1,23 @@
 import random
 import pygame
 SCREEN_RECT = pygame.Rect(0,0,480,700)
-CREATE_ENEMY_EVENT = pygame.USEREVENT 
+CREATE_ENEMY_EVENT = pygame.USEREVENT   #敌机事件常量
+CREATE_BULLET_EVENT = pygame.USEREVENT + 1   #子弹时间常量
+#爆炸销毁图片
+bg1 = pygame.image.load("/home/huiguowei/桌面/1808/07day/images/enemy0_down1.png")
+bg2 = pygame.image.load("/home/huiguowei/桌面/1808/07day/images/enemy0_down2.png")
+bg3 = pygame.image.load("/home/huiguowei/桌面/1808/07day/images/enemy0_down3.png")
+
+bg4 = pygame.image.load("/home/huiguowei/桌面/1808/07day/images/enemy0_down4.png")
+#爆炸精灵组
+enemy1_down_group = pygame.sprite.Group()
+#爆炸图片放到列表中
+enemy1_down_surface = []
+enemy1_down_surface.append(bg1)
+enemy1_down_surface.append(bg2)
+enemy1_down_surface.append(bg3)
+enemy1_down_surface.append(bg4)
+
 class GameSprite(pygame.sprite.Sprite):  #父类
 	def __init__(self,imagename,speed=1,speed1=1):
 		super().__init__()   #调用父类方法
@@ -11,6 +27,7 @@ class GameSprite(pygame.sprite.Sprite):  #父类
 		self.speed1 = speed1
 	def update(self):
 		self.rect.y+=self.speed
+
   
 class EnemySprite(GameSprite):   #敌机子类
 	def __init__(self):
@@ -21,12 +38,17 @@ class EnemySprite(GameSprite):   #敌机子类
 		max_x = SCREEN_RECT.width - self.rect.width
 		self.rect.x = random.randint(0,max_x)
 
+		self.rect.bottom = 0
+
+		self.down_index = 0  #敌机销毁图片索引
+
 	def update(self):
 		super().update()
 		if self.rect.y >= SCREEN_RECT.height:
 			self.kill()
 			#print("销毁")
-
+	def __del__(self):
+		pass
 class BackGroundSprite(GameSprite):
 	def __init__(self,is_alt=False):
 		self.imagename = "/home/huiguowei/桌面/1808/07day/images/background.png"
@@ -52,7 +74,7 @@ class HeroSprite(GameSprite):
 
 		if self.rect.left <= 0:
 			self.rect.left = 0
-ni
+
 		if self.rect.right >= SCREEN_RECT.width:
 			self.rect.right = SCREEN_RECT.width
 
