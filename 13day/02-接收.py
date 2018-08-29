@@ -1,0 +1,10 @@
+from socket import *
+udpSocket = socket(AF_INET,SOCK_DGRAM)
+udpSocket.sendto("哈哈哈".encode("gb2312"),("192.168.56.1",8080))
+msg = udpSocket.recvfrom(1024)
+print(msg)
+print(msg[0].decode("gb2312"))
+print(msg[1][0])
+print(msg[1][1])
+recvData = udpSocket.recvfrom(1024)
+udpSocket.close()
